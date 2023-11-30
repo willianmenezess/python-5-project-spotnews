@@ -1,20 +1,8 @@
+{% extends "base.html" %}
 {% load static %}
+{% block title %}Página Inicial{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Página Inicial</title>
-</head>
-
-<body>
-    <header class="header">
-        <ul class="header-links">
-            <li><a href="{% url 'home-page' %}">Home</a></li>
-        </ul>
-    </header>
+{% block content %}
     <main>
         {% if not news %}
             <h2 class="news-title">Nenhuma notícia cadastrada</h2>
@@ -28,5 +16,6 @@
             </div>
         {% endfor %}
     </main>
+{% endblock %}
 </body>
 </html>
