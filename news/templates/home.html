@@ -10,6 +10,7 @@
 
         {% for new in news %}
             <div>
+                <a href="{% url 'news-details' new.id %}">Ver detalhes</a>
                 <h2 class="news-title">{{new.title}}</h2>
                 <span class="news-date">{{new.created_at|date:"d/m/Y"}}</span>
                 <img class="news-image" src="{% static new.image.url %}">
