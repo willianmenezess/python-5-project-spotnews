@@ -39,7 +39,7 @@ class CreateNewsForm(forms.ModelForm):
         )
         self.fields['image'].label = 'URL da Imagem'
         self.fields['image'].widget = forms.FileInput(
-            attrs={'type': 'file', 'name': 'image', 'maxlength': '200'}
+            attrs={'type': 'file', 'name': 'image'}
         )
 
         self.fields['categories'] = forms.ModelMultipleChoiceField(
