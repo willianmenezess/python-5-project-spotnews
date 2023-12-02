@@ -3,17 +3,17 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
-    <main>
+    <main class="news-container">
         {% if not news %}
             <h2 class="news-title">Nenhuma notícia cadastrada</h2>
         {% endif %}
 
         {% for new in news %}
-            <div>
-                <a href="{% url 'news-details-page' new.id %}">Ver detalhes</a>
+            <div class="news-card">
                 <h2 class="news-title">{{new.title}}</h2>
                 <span class="news-date">{{new.created_at|date:"d/m/Y"}}</span>
                 <img class="news-image" src="{% static new.image.url %}">
+                <a href="{% url 'news-details-page' new.id %}">Ver detalhes</a>
             </div>
         {% endfor %}
     </main>
