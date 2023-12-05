@@ -16,7 +16,6 @@ class CreateNewsForm(forms.ModelForm):
     class Meta:
         model = News
         fields = '__all__'
-        exclude = ['categories']
 
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)

@@ -34,7 +34,7 @@ def register_category(request):
 def register_news(request):
     # método POST: cria um formulário com os dados do POST e salva no BD
     if request.method == 'POST':
-        form = CreateNewsForm(request.POST)
+        form = CreateNewsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('home-page')
